@@ -25,7 +25,7 @@
     "core-js": "^3.6.4",
     "gpt3rocket": "^1.0.0",
     "install": "^0.13.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "lodash.get": "^4.4.2",
     "nes.css": "^2.3.0",
     "showdown": "^1.9.1",
