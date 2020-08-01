@@ -1,0 +1,8 @@
+presets: [
+  [
+    "@vue/app",
+    {
+      useBuiltIns: "entry",
+    },
+  ],
+];

@@ -1,0 +1,72 @@
+{
+  "name": "gpt3chat",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm:server\" \"npm:serve\"",
+    "server": "cd server && npm start",
+    "1st_time": "npm i && cd server && npm i",
+    "cypress": "cypress open",
+    "test": "cypress run",
+    "test:visual": "npm run cypress",
+    "cypress:init": "node_modules/.bin/cypress open",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "build:prod": "vue-cli-service build --mode production",
+    "lint": "vue-cli-service lint",
+    "build_test": "tsc",
+    "killdist": "rm -rf dist"
+  },
+  "config": {},
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chart.xkcd": "^1.1.13",
+    "chart.xkcd-vue": "^1.1.0",
+    "core-js": "^3.6.4",
+    "gpt3rocket": "^1.0.0",
+    "install": "^0.13.0",
+    "lodash": "^4.17.15",
+    "lodash.get": "^4.4.2",
+    "nes.css": "^2.3.0",
+    "showdown": "^1.9.1",
+    "typeface-press-start-2p": "0.0.72",
+    "vue": "^2.6.11",
+    "vue-carousel-3d": "^0.2.0",
+    "vue-js-modal": "^2.0.0-rc.6",
+    "vue-tippy": "^4.5.1"
+  },
+  "devDependencies": {
+    "@types/tape": "^4.13.0",
+    "@vue/cli-plugin-babel": "~4.3.0",
+    "@vue/cli-plugin-eslint": "~4.3.0",
+    "@vue/cli-service": "~4.3.0",
+    "babel-eslint": "^10.1.0",
+    "concurrently": "^5.2.0",
+    "cypress": "^4.9.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "tape": "^5.0.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
