@@ -453,7 +453,7 @@ export default {
       reader.onload = function() {
         try {
           const data = JSON.parse(reader.result);
-          this.$emit("importPersonas", { personas: data });
+          this.$emit("importPersonas", { newPersonas: data });
         } catch (e) {
           alert(
             `Error parsing file, make sure it is valid JSON (keys quoted, no trailing commas ${JSON.stringify(

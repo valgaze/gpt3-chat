@@ -369,6 +369,7 @@ const config = {
 };
 const client = new ClientHelper(config);
 
+const starterQuestion = ["Who are you?", "What's your best advice?"];
 export default {
   name: "App",
   components: {
@@ -463,7 +464,7 @@ export default {
       scrollToBottom: true,
       triggerMessage: "",
       triggerShortcut: "",
-      suggestions: [],
+      suggestions: starterQuestion,
       permanentSuggestions: [],
       // permanentSuggestions: ["$help"],
       linkoutSuggestion: {},
@@ -510,11 +511,13 @@ export default {
     },
   },
   methods: {
-    importPersonas(payload) {
-      if (payload.personas) {
-        const merge = Object.assign(this.personas, payload.personas);
-        Vue.set(this, "personas", merge);
-        console.log("#", this.personas);
+    importPersonas(payload = {}) {
+      const { newPersonas } = payload;
+      if (payload.newPersonas) {
+        for (let key in newPersonas) {
+          const persona = newPersonas[key];
+          this.$set(this.personas, key, persona);
+        }
       }
     },
     updateAPIConfig(payload) {
@@ -524,6 +527,7 @@ export default {
       const { personaKey } = payload;
       this.personaKey = personaKey;
       this.activePersona = this.personas[this.personaKey];
+      this.suggestions = starterQuestion;
     },
     removeSample({ index }) {
       this.activePersona.samples.splice(index, 1);
